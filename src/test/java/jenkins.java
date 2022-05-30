@@ -13,7 +13,7 @@ public class jenkins {
     public void setup(){
 //        System.setProperty("webdriver.edge.driver", "C:\\Users\\03166A744\\Desktop\\msedgedriver.exe");
         if (System.getProperty("browser").equalsIgnoreCase("Edge")){
-            WebDriverManager.edgedriver().setup();
+            System.setProperty("webdriver.edge.driver", "C:\\Users\\03166A744\\Desktop\\msedgedriver.exe");
             driver = new EdgeDriver();
         }
 
