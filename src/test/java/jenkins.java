@@ -14,9 +14,9 @@ public class jenkins {
 //        System.setProperty("webdriver.edge.driver", "C:\\Users\\03166A744\\Desktop\\msedgedriver.exe");
         if (System.getProperty("browser").equalsIgnoreCase("Edge")){
             WebDriverManager.edgedriver().setup();
-
+            driver = new EdgeDriver();
         }
-        driver = new EdgeDriver();
+
 //        String URL = "https://www.google.com";
         driver.get(System.getProperty("url"));
         driver.manage().window().maximize();
