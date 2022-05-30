@@ -1,3 +1,4 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterMethod;
@@ -10,10 +11,14 @@ public class jenkins {
 
     @BeforeMethod
     public void setup(){
-        System.setProperty("webdriver.edge.driver", "C:\\Users\\03166A744\\Desktop\\msedgedriver.exe");
-        driver = new EdgeDriver();
-        String URL = "https://www.google.com";
-        driver.get(URL);
+//        System.setProperty("webdriver.edge.driver", "C:\\Users\\03166A744\\Desktop\\msedgedriver.exe");
+        if (System.getProperty("browser").equalsIgnoreCase("Edge")){
+            WebDriverManager.edgedriver().setup();
+
+        }
+//        driver = new EdgeDriver();
+//        String URL = "https://www.google.com";
+        driver.get(System.getProperty("url"));
         driver.manage().window().maximize();
     }
     @AfterMethod
@@ -24,6 +29,7 @@ public class jenkins {
     @Test
     public void Test1(){
         System.out.println("Test1");
+        System.out.println("This i snew commit");
     }
 
     @Test
