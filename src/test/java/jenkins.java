@@ -16,7 +16,7 @@ public class jenkins {
             WebDriverManager.edgedriver().setup();
 
         }
-//        driver = new EdgeDriver();
+        driver = new EdgeDriver();
 //        String URL = "https://www.google.com";
         driver.get(System.getProperty("url"));
         driver.manage().window().maximize();
